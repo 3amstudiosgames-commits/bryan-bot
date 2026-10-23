@@ -2,7 +2,6 @@ require("dotenv").config();
 
 const axios = require("axios");
 const { App, LogLevel } = require("@slack/bolt");
-
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   appToken: process.env.SLACK_APP_TOKEN,
@@ -10,8 +9,16 @@ const app = new App({
   logLevel: LogLevel.DEBUG // Add this line to log incoming events
 });
 
-
-
+/*
+Bryan's Commands:
+------------------------
+/bryan-hodukavich-ping
+/bryan-hodukavich-help
+/bryan-hodukavich-hi
+/bryan-hodukavich-catfact
+/bryan-hodukavich-joke
+/bryan-hodukavich-remind-me
+*/
 
 app.command("/bryan-hodukavich-ping", async ({ command, ack, respond }) => {
   const start = Date.now();
@@ -24,12 +31,12 @@ app.command("/bryan-hodukavich-help", async ({ ack, respond }) => {
   await respond({
     text:
 `Available Commands:
+/bryan-hodukavich-hi - Say hi!
 /bryan-hodukavich-weather - Get Weather and Temp
 /bryan-hodukavich-funfact - Get a Fun fact
 /bryan-hodukavich-catfact - Get a cat fact`
   });
 });
-
 app.command("/bryan-hodukavich-catfact", async ({ ack, respond }) => {
   await ack();
   try {
@@ -55,6 +62,10 @@ ${response.data.punchline}`
   }
 });
 
+
+
+
+//Is it running?
 (async () => {
   await app.start();
   console.log("bot is running!");
