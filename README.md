@@ -2,7 +2,7 @@
 A bot that runs 24/7 that I created for Stardance mission called slack bot. It can respond to commands like /weather and /remind-me and others.
 ## Screenshots:
 
-example of command /bryan-hodukavick-help  and example of command /bryan-hodukavich-remid-me + (time, task)  
+example of command /bryan-hodukavick-help  and example of command /bryan-hodukavich-remind-me + (time, task)  
 <br>
 <img width="308" height="104" alt="Screenshot 2026-10-25 003353" src="https://github.com/user-attachments/assets/392d7b83-a898-40c9-940b-40e63867e515" />  
 <br>  
@@ -25,7 +25,7 @@ Add Bryan to chats by /invite @Bryan Hodukavich
 
 available commands:   
 /bryan-hodukavich-hi - Say hi!  
-/bryan-hodukavich-weather - Get Weather and Temp  (ex: /weather command + city)  
+/bryan-hodukavich-weather - Get Weather and Temp  (ex: /weather + city)  
 /bryan-hodukavich-joke - Get a Joke   
 /bryan-hodukavich-catfact - Get a cat fact  
 /bryan-hodukavich-remind-me - Tell Bryan to remind you in 2 min to wash plates: (ex: /remind-me + 2 wash plates)  
