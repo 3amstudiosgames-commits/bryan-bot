@@ -1,4 +1,4 @@
-# bryan-bot
+# Bryan Bot
 A bot that runs 24/7 that I created for Stardance mission called slack bot. It can respond to commands like /weather and /remind-me and others.
 ## Screenshots:
 
@@ -14,6 +14,7 @@ On slack search for Bryan Hodukavich and go to the Dms and just type /bryan-hodu
 
 You can also download the file and change the weather API key (OpenWeather or weather another weather API) and change the Tokens.
 
+Add Bryan to chats by /invite @Bryan Hodukavich
 ## Bug/Problems:
 - Not having API keys if downloaded
 - Typed wrong the commands like /weather or /remind-me
