@@ -2,10 +2,11 @@ require("dotenv").config();
 
 const axios = require("axios");
 const { App, LogLevel } = require("@slack/bolt");
+
+const weather = process.env.WEATHER_KEY;
 const app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   appToken: process.env.SLACK_APP_TOKEN,
-  weather: process.env.WEATHER_KEY,
   socketMode: true,
   logLevel: LogLevel.DEBUG // Add this line to log incoming events
 });
@@ -45,10 +46,10 @@ app.command("/bryan-hodukavich-help", async ({ ack, respond }) => {//Dictionary 
 `Available Commands:
 --------------------------------
 /bryan-hodukavich-hi - Say hi!
-/bryan-hodukavich-weather - Get Weather and Temp
+/bryan-hodukavich-weather - Get Weather and Temp (ex:/weather London)
 /bryan-hodukavich-funfact - Get a Fun fact
 /bryan-hodukavich-catfact - Get a cat fact
-/bryan-hodukavich-remind-me - Tell Bryan to remind you in 2 min to wash plates: (ex: 2 wash plates)`
+/bryan-hodukavich-remind-me - Tell Bryan to remind you in 2 min to wash plates: (ex:/remind-me 2 wash plates)`
   });
 });
 app.command("/bryan-hodukavich-catfact", async ({ ack, respond }) => {//Get a cat fact
@@ -112,10 +113,13 @@ app.command("/bryan-hodukavich-remind-me",async ({ command, ack, respond, client
 });
 app.command("/bryan-hodukavich-weather", async ({ command, ack, respond }) => {//Get weather
   await ack();
-  const userInput = command.text.trim();
-  const city = userInput.length > 0 ? userInput : "London";
+  const user = command.text ? command.text.trim() : "";
+
+  const city = user.length > 0 ? user : "Tokyo";
   try {
+    
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&appid=${weather}&units=metric`;
+    
     const response = await axios.get(url);
     const data = response.data;
 
@@ -123,6 +127,13 @@ app.command("/bryan-hodukavich-weather", async ({ command, ack, respond }) => {/
     const desc = data.weather[0].description;
     const cityName = data.name;
     const country = data.sys.country;
+
+
+
+
+
+
+
 
     await respond({
       response_type: 'in_channel',
@@ -139,10 +150,9 @@ app.command("/bryan-hodukavich-weather", async ({ command, ack, respond }) => {/
 
 
 
-
-
 //Is it running? Check
 (async () => {
   await app.start();
   console.log("bot is running!");
+  console.log(weather);
 })();
