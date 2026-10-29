@@ -10,11 +10,14 @@ example of command /bryan-hodukavick-help  and example of command /bryan-hodukav
 <br>
 
 ## How to use:
-On slack search for Bryan Hodukavich and go to the Dms and just type /bryan-hodukavich-help to check out how to use and available commands. 
+On slack search for Bryan Hodukavich and go to the Dms and just type /bryan-hodukavich-help to check out how to use and available commands.   
 
 You can also download the file and change the weather API key (OpenWeather or weather another weather API) and change the Tokens.
 
-Add Bryan to chats by /invite @Bryan Hodukavich
+Add Bryan to chats by /invite @Bryan Hodukavich  
+
+https://hackclub.enterprise.slack.com/archives/C0CDA7021GA <- Public Channel 
+
 ## Bug/Problems:
 - Not having API keys if downloaded
 - Typed wrong the commands like /weather or /remind-me
