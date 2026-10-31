@@ -26,7 +26,7 @@ Bryan's Commands:
 
 
 //command codes---------------------------------------------------------------------------------------------------------
-app.command("/bryan-hodukavich-", async ({ command, ack, respond }) => { //Get a random hi!
+app.command("/bryan-hodukavich-hi", async ({ command, ack, respond }) => { //Get a random hi!
   const list_hi= ["What's up!", "Yo!","Hey!","Hi!"];
   const random_hi = list_hi[Math.floor(Math.random() * list_hi.length)];
 
